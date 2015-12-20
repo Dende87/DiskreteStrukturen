@@ -16,7 +16,7 @@ public class RekursiveAlgorithmus {
 
 	int counter;
 
-	int getGGT(int a, int b) {
+	double getGGT(double a, double b) {
 
 		if (a == b) {
 			System.out.print("da a = b und Schritt 2 " + counter + " mal aufgerufen wurde => ");
@@ -59,7 +59,7 @@ public class RekursiveAlgorithmus {
 		}
 	}
 
-	void logText(int a, int b) {
+	void logText(double a, double b) {
 		System.out.print("ggT(" + a + ", " + b + ")");
 	}
 }
