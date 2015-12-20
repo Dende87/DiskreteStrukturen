@@ -1,7 +1,5 @@
 package ggT;
 
-import java.math.BigInteger;
-
 import fermat.FermatZahl;
 
 public class GGT{
