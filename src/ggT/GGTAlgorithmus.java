@@ -12,11 +12,11 @@ package ggT;
  * @author Dende
  *
  */
-public class RekursiveAlgorithmus {
+public class GGTAlgorithmus {
 
 	int counter;
 
-	double getGGT(double a, double b) {
+	public double getGGTwithLog(double a, double b) {
 
 		if (a == b) {
 			System.out.print("da a = b und Schritt 2 " + counter + " mal aufgerufen wurde => ");
@@ -35,31 +35,39 @@ public class RekursiveAlgorithmus {
 			System.out.print("da a und b gerade => 2*");
 			logText(a, b);
 			IO.println();
-			return 2 * getGGT(a, b);
+			return 2 * getGGTwithLog(a, b);
 		} else if (a % 2 == 0 && b % 2 != 0) {
 			logText(a, b);
 			a = a / 2;
 			System.out.print("da a gerade und b ungerade => ");
 			logText(a, b);
 			IO.println();
-			return getGGT(a, b);
+			return getGGTwithLog(a, b);
 		} else if (a > b && a % 2 != 0 && b % 2 != 0) {
 			logText(a, b);
 			a = a - b;
 			System.out.print("da a > b und a,b ungerade => ");
 			logText(a, b);
 			IO.println();
-			return getGGT(a, b);
+			return getGGTwithLog(a, b);
 		} else {
 			logText(a, b);
 			System.out.print("ansonsten a und b tauschen => ");
 			logText(a, b);
 			IO.println();
-			return getGGT(b, a);
+			return getGGTwithLog(b, a);
 		}
 	}
 
 	void logText(double a, double b) {
 		System.out.print("ggT(" + a + ", " + b + ")");
+	}
+	
+	public double getGGT(double a,double b)
+	{
+	    if (b==0)
+	        return a;
+	    else
+	        return getGGT(b, a%b);
 	}
 }
