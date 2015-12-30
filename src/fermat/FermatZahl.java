@@ -2,19 +2,14 @@ package fermat;
 
 public class FermatZahl {
 
-	private double x = 0;
+	public static double getFermatZahl(double a) {
 
-	public double getFermatZahl(double a) {
-
-		if (x == 0) {
-			x = pow(a);
-			a = x;
-		}
+		a = pow(a);
 
 		return a = 2 * pow(a - 1) + 1;
 	}
 
-	private double pow(double a) {
+	private static double pow(double a) {
 
 		if (a == 0) {
 			return 1;
